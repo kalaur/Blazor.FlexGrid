@@ -75,9 +75,9 @@ namespace Blazor.FlexGrid.Demo.Server.Controllers
         {
             //var rng = new Random();
             DataTable tdt = new DataTable();
-            DataColumn tdc1 = new DataColumn("fio", typeof(string));
-            DataColumn tdc2 = new DataColumn("cds", typeof(DateTime));
-            DataColumn tdc3 = new DataColumn("csum", typeof(int));
+            DataColumn tdc1 = new DataColumn("cnm", typeof(string));
+            DataColumn tdc2 = new DataColumn("odt", typeof(DateTime));
+            DataColumn tdc3 = new DataColumn("osum", typeof(int));
             tdt.Columns.AddRange(new DataColumn[] { tdc1, tdc2, tdc3 });
             tdt.Rows.Add(new object[] {"John Smith",new DateTime (2018,7,21),5000 });
             tdt.Rows.Add(new object[] { "Mary Poppins", new DateTime(2018, 7, 25), 7000 });
