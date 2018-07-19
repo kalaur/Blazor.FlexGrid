@@ -1,0 +1,19 @@
+﻿@addTagHelper *, Blazor.FlexGrid
+@using Blazor.FlexGrid.Demo.Shared
+@using Blazor.FlexGrid.DataAdapters
+@inject HttpClient Http
+@page "/dtgrid"
+
+<h1>Weather forecast</h1>
+
+<GridView DataAdapter="@dataAdapter" PageSize="5"></GridView>
+
+@functions{
+    CollectionTableDataAdapter<LstStd> dataAdapter;
+
+    protected override async Task OnInitAsync()
+    {
+        var forecast = await Http.GetJsonAsync<LstStd[]>("/api/LstStd/LstStdGet");
+        dataAdapter = new CollectionTableDataAdapter<LstStd>(forecast);
+    }
+}
