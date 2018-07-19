@@ -12,12 +12,12 @@ namespace Blazor.FlexGrid.Demo.Client.GridConfigurations
                 .HasCaption("Order date")
                 .HasValueFormatter(d => d.ToShortDateString());
 
-            builder.Property(e => e.fio)
+            builder.Property(e => e.cnm)
                 .HasCaption("Client Name")
                 .HasOrder(1)
                 .HasValueFormatter(s => $"{s}");
 
-            builder.Property(e => e.csum)
+            builder.Property(e => e.osum)
                 .HasCaption("Order Sum")
                 .IsSortable();
         }
